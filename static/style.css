@@ -1,0 +1,260 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f5ff;
+    color: #332b50;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: white;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #8064e9;
+}
+
+.tag {
+    background: #eee8ff;
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #bba8ff, #f7bce9, #a8ddff);
+    animation: aparecer 1s ease;
+}
+
+.decoracion {
+    font-size: 35px;
+    margin-bottom: 20px;
+    animation: flotar 3s infinite ease-in-out;
+}
+
+.etiqueta {
+    color: #8064e9;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero .etiqueta {
+    color: #55417d;
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 48px);
+    margin-bottom: 18px;
+}
+
+.subtitulo {
+    color: #716982;
+    line-height: 1.7;
+    margin: 15px auto 25px;
+    max-width: 550px;
+}
+
+.hero .subtitulo {
+    color: #51466a;
+}
+
+.boton {
+    display: inline-block;
+    border: none;
+    background: #8064e9;
+    color: white;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+    margin: 8px;
+}
+
+.boton:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: #694bd4;
+}
+
+.emociones {
+    text-align: center;
+    padding: 70px 0;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.grid-emociones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.mood {
+    border: 2px solid transparent;
+    border-radius: 22px;
+    padding: 25px 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #423958;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.mood span {
+    display: block;
+    font-size: 43px;
+    margin-bottom: 12px;
+}
+
+.mood:hover {
+    transform: translateY(-7px);
+    border-color: #8064e9;
+}
+
+.feliz { background: #fff2b8; }
+.triste { background: #cce6ff; }
+.estresado { background: #ffd6c7; }
+.enojado { background: #ffcbd4; }
+.cansado { background: #ddd3ff; }
+.solo { background: #f5d5ff; }
+
+.resultado {
+    text-align: center;
+    background: white;
+    border-radius: 28px;
+    padding: 35px 25px;
+    margin: 20px auto 60px;
+    box-shadow: 0 10px 35px #b8a5df35;
+    animation: aparecer .5s ease;
+}
+
+#emojiResultado {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+#mensajeResultado {
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.consejo {
+    background: #f0ebff;
+    padding: 22px;
+    border-radius: 18px;
+    text-align: left;
+    margin: 25px 0;
+    line-height: 1.8;
+}
+
+.boton-secundario {
+    display: block;
+    margin: 12px auto;
+    border: none;
+    background: #eee9f8;
+    color: #66518d;
+    padding: 13px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    background: #eae3ff;
+    border-radius: 25px;
+    padding: 35px 20px;
+    line-height: 1.8;
+}
+
+footer small {
+    display: block;
+    color: #766c88;
+    margin-top: 20px;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 17px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .hero {
+        padding: 55px 15px;
+    }
+
+    .grid-emociones {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .mood {
+        padding: 20px 8px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+}
