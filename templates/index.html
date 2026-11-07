@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8064e9">
+    <title>Mente en Equilibrio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🧠 Mente en Equilibrio</div>
+        <span class="tag">Tu espacio seguro 💜</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="decoracion">✨ 🌈 ☁️</div>
+
+            <p class="etiqueta">UN MOMENTO PARA TI</p>
+
+            <h1>¡Hola! 👋<br>
+                ¿Cómo está tu corazón hoy?
+            </h1>
+
+            <p class="subtitulo">
+                No importa cómo te sientas.
+                Aquí tienes un espacio para expresarte
+                sin miedo a ser juzgado.
+            </p>
+
+            <a href="#emociones" class="boton">
+                Comenzar 💜
+            </a>
+        </section>
+
+        <section id="emociones" class="emociones">
+            <p class="etiqueta">CONOCE TUS EMOCIONES</p>
+
+            <h2>¿Cómo te sientes hoy?</h2>
+
+            <p class="subtitulo">
+                Selecciona la emoción que mejor te representa.
+            </p>
+
+            <div class="grid-emociones">
+
+                <button class="mood feliz" data-mood="feliz">
+                    <span>😊</span>
+                    Feliz
+                </button>
+
+                <button class="mood triste" data-mood="triste">
+                    <span>😔</span>
+                    Triste
+                </button>
+
+                <button class="mood estresado" data-mood="estresado">
+                    <span>😰</span>
+                    Estresado
+                </button>
+
+                <button class="mood enojado" data-mood="enojado">
+                    <span>😡</span>
+                    Enojado
+                </button>
+
+                <button class="mood cansado" data-mood="cansado">
+                    <span>😴</span>
+                    Cansado
+                </button>
+
+                <button class="mood solo" data-mood="solo">
+                    <span>🥺</span>
+                    Solo
+                </button>
+
+            </div>
+        </section>
+
+        <section id="resultado" class="resultado oculto">
+            <div id="emojiResultado">💜</div>
+
+            <p class="etiqueta">UN MENSAJE PARA TI</p>
+
+            <h2 id="tituloResultado"></h2>
+
+            <p id="mensajeResultado"></p>
+
+            <div class="consejo">
+                <strong>🌱 Un pequeño consejo:</strong>
+                <p id="consejoResultado"></p>
+            </div>
+
+            <button id="otroMensaje" class="boton">
+                Otro mensaje ✨
+            </button>
+
+            <button id="volver" class="boton-secundario">
+                Elegir otra emoción
+            </button>
+        </section>
+
+        <footer>
+            <h3>Recuerda algo importante 💜</h3>
+            <p>
+                Tus emociones importan.
+                No tienes que estar bien todos los días.
+                Mereces escucharte y recibir apoyo.
+            </p>
+            <small>
+                Mente en Equilibrio · Un espacio de bienestar emocional.
+                No sustituye la atención psicológica profesional.
+            </small>
+        </footer>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
