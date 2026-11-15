@@ -182,6 +182,15 @@ h2 {
 .enojado { background: #ffcbd4; }
 .cansado { background: #ddd3ff; }
 .solo { background: #f5d5ff; }
+.miedo { background: #d6e4f0; }
+.nostalgico { background: #f3e1c7; }
+.avergonzado { background: #ffd9e8; }
+.culpable { background: #e4e0ef; }
+.celoso { background: #d4f2dc; }
+.sorprendido { background: #fff0cc; }
+.decepcionado { background: #dbe3ea; }
+.confundido { background: #e0f0ee; }
+.agradecido { background: #ffe8c2; }
 
 .resultado {
     text-align: center;
