@@ -29,11 +29,44 @@ header {
     color: #8064e9;
 }
 
-.tag {
-    background: #eee8ff;
+.logo {
+    text-decoration: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 15px #b8a5df25;
+}
+
+header nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: #55417d;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
     padding: 9px 15px;
     border-radius: 30px;
-    font-size: 13px;
+    transition: .2s;
+}
+
+header nav a:hover {
+    background: #eee8ff;
+}
+
+header nav .nav-ayuda {
+    background: #ffe3e8;
+    color: #a3324b;
+}
+
+header nav .nav-ayuda:hover {
+    background: #ffd0d9;
 }
 
 main {
@@ -237,6 +270,11 @@ footer small {
         font-size: 17px;
     }
 
+    header nav a {
+        padding: 7px 11px;
+        font-size: 13px;
+    }
+
     main {
         padding: 15px;
     }
@@ -256,5 +294,564 @@ footer small {
 
     h2 {
         font-size: 25px;
+    }
+}
+
+/* ===================== Accesibilidad ===================== */
+
+.saltar {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+    background: #8064e9;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.saltar:focus {
+    left: 10px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+a:focus-visible,
+button:focus-visible,
+.casilla input:focus-visible,
+.interruptor input:focus-visible + .deslizador {
+    outline: 3px solid #8064e9;
+    outline-offset: 3px;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+.sin-scroll {
+    overflow: hidden;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ===================== Inicio: extras ===================== */
+
+.bienvenida {
+    background: #ffffffb0;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 18px;
+    margin: 0 auto 20px;
+    max-width: 550px;
+    color: #4a3d6b;
+    line-height: 1.6;
+}
+
+.mood.seleccionado {
+    border-color: #8064e9;
+    box-shadow: 0 8px 20px #8064e940;
+}
+
+.boton-suave {
+    background: #eae3ff;
+    color: #55417d;
+}
+
+.boton-suave:hover {
+    background: #ddd3ff;
+}
+
+/* Respiración */
+
+.respira {
+    text-align: center;
+    background: white;
+    border-radius: 28px;
+    padding: 50px 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 35px #b8a5df25;
+}
+
+.circulo-contenedor {
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 15px;
+}
+
+.circulo-respira {
+    --duracion: 4s;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #d9ceff, #a8ddff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 12px #eee8ff;
+    transition: transform var(--duracion) ease-in-out;
+}
+
+.circulo-respira span {
+    font-weight: bold;
+    color: #3f3266;
+    font-size: 17px;
+    transition: transform var(--duracion) ease-in-out;
+}
+
+.circulo-respira.inhalar,
+.circulo-respira.sostener {
+    transform: scale(1.8);
+}
+
+/* El texto se encoge en sentido contrario para mantener su tamaño visual */
+.circulo-respira.inhalar span,
+.circulo-respira.sostener span {
+    transform: scale(.56);
+}
+
+.contador-respira {
+    min-height: 24px;
+    color: #716982;
+    margin-bottom: 10px;
+}
+
+/* Ayuda urgente */
+
+.ayuda {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #fff0f3;
+    border: 2px solid #ffd0d9;
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.ayuda-icono {
+    font-size: 40px;
+}
+
+.ayuda h2 {
+    font-size: 24px;
+    color: #8f2a41;
+}
+
+.ayuda ul {
+    margin: 12px 0 0 20px;
+}
+
+.ayuda li {
+    margin-bottom: 6px;
+}
+
+.ayuda a {
+    color: #a3324b;
+    font-weight: bold;
+}
+
+/* ===================== Pie de página ===================== */
+
+.enlaces-legales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin-top: 20px;
+}
+
+.enlaces-legales a,
+.enlace-boton {
+    color: #66518d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.enlace-boton {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ===================== Ventanas modales ===================== */
+
+.modal-fondo {
+    position: fixed;
+    inset: 0;
+    background: #2a2240a6;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 50;
+    animation: aparecerFondo .3s ease;
+}
+
+.modal {
+    background: white;
+    border-radius: 26px;
+    padding: 32px 28px;
+    max-width: 520px;
+    width: 100%;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    box-shadow: 0 20px 60px #2a224050;
+    animation: aparecer .35s ease;
+}
+
+.modal h2 {
+    text-align: center;
+    font-size: 26px;
+}
+
+.modal-emoji {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 8px;
+}
+
+.modal-texto {
+    text-align: center;
+    color: #716982;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* Casillas de términos */
+
+.casilla {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #f8f5ff;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    line-height: 1.5;
+    font-size: 15px;
+    transition: .2s;
+}
+
+.casilla:hover {
+    border-color: #ddd3ff;
+}
+
+.casilla:has(input:checked) {
+    background: #eee8ff;
+    border-color: #8064e9;
+}
+
+.casilla input {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: #8064e9;
+    cursor: pointer;
+}
+
+.casilla a {
+    color: #694bd4;
+    font-weight: 600;
+}
+
+.progreso-casillas {
+    text-align: center;
+    font-size: 13px;
+    color: #766c88;
+    margin: 14px 0 6px;
+}
+
+.boton-ancho {
+    display: block;
+    width: 100%;
+    margin: 8px 0 0;
+}
+
+.boton:disabled {
+    background: #c9bff0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Opciones de cookies */
+
+.opcion-cookie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eee8ff;
+}
+
+.opcion-cookie p {
+    color: #716982;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+.interruptor {
+    position: relative;
+    flex-shrink: 0;
+    width: 50px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.interruptor input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.deslizador {
+    position: absolute;
+    inset: 0;
+    background: #d6d0e3;
+    border-radius: 30px;
+    transition: .25s;
+    pointer-events: none;
+}
+
+.deslizador::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: .25s;
+}
+
+.interruptor input:checked + .deslizador {
+    background: #8064e9;
+}
+
+.interruptor input:checked + .deslizador::before {
+    transform: translateX(22px);
+}
+
+.interruptor input:disabled + .deslizador {
+    opacity: .55;
+}
+
+.modal-botones {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-botones .boton,
+.modal-botones .boton-secundario {
+    margin: 0;
+}
+
+/* ===================== Aviso de cookies ===================== */
+
+.banner-cookies {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 22px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 40px #2a224035;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 40;
+    animation: aparecer .4s ease;
+}
+
+.banner-cookies p {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.banner-cookies a {
+    color: #694bd4;
+    font-weight: 600;
+}
+
+.banner-botones {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.banner-botones .boton,
+.banner-botones .boton-secundario {
+    margin: 0;
+    padding: 12px 18px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* ===================== Páginas legales ===================== */
+
+.legal {
+    background: white;
+    border-radius: 28px;
+    padding: 45px 40px;
+    margin: 20px 0 40px;
+    line-height: 1.75;
+    box-shadow: 0 10px 35px #b8a5df25;
+}
+
+.legal h1 {
+    font-size: clamp(28px, 5vw, 38px);
+    margin-bottom: 6px;
+}
+
+.legal h2 {
+    font-size: 21px;
+    margin: 30px 0 8px;
+    color: #4a3d6b;
+}
+
+.legal p,
+.legal li {
+    color: #4f4766;
+}
+
+.legal ul {
+    margin: 8px 0 8px 22px;
+}
+
+.legal a:not(.boton) {
+    color: #694bd4;
+}
+
+.legal .boton {
+    margin: 35px 0 0;
+}
+
+.legal .boton-secundario {
+    margin: 12px 0;
+}
+
+.legal .fecha-legal {
+    font-size: 14px;
+    color: #8a819c;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    margin: 12px 0;
+}
+
+.legal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    min-width: 520px;
+}
+
+.legal th,
+.legal td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #eee8ff;
+    vertical-align: top;
+}
+
+.legal th {
+    background: #f8f5ff;
+    color: #4a3d6b;
+}
+
+.legal code {
+    background: #f0ebff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+@keyframes aparecerFondo {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .banner-cookies {
+        flex-direction: column;
+        align-items: stretch;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 18px;
+    }
+
+    .banner-botones {
+        flex-wrap: wrap;
+    }
+
+    .banner-botones .boton,
+    .banner-botones .boton-secundario {
+        flex: 1;
+    }
+
+    .banner-botones #cookiesAceptar {
+        order: -1;
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal {
+        padding: 26px 18px;
+    }
+
+    .ayuda {
+        flex-direction: column;
+        gap: 6px;
+        padding: 24px 20px;
+    }
+
+    .legal {
+        padding: 30px 20px;
+    }
+
+    .respira {
+        padding: 40px 16px;
     }
 }

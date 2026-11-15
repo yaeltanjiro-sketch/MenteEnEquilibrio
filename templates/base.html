@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8064e9">
+    <meta name="description" content="Mente en Equilibrio: un espacio seguro para reconocer tus emociones, respirar y recibir un mensaje de apoyo.">
+    <title>{% block titulo %}Mente en Equilibrio{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body data-pagina-legal="{% block pagina_legal %}no{% endblock %}">
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header>
+        <a href="{{ url_for('inicio') }}" class="logo">🧠 Mente en Equilibrio</a>
+        <nav aria-label="Principal">
+            <a href="{{ url_for('inicio') }}#emociones">Emociones</a>
+            <a href="{{ url_for('inicio') }}#respira">Respira</a>
+            <a href="{{ url_for('inicio') }}#ayuda" class="nav-ayuda">Ayuda urgente</a>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        {% block contenido %}{% endblock %}
+
+        <footer>
+            <h3>Recuerda algo importante 💜</h3>
+            <p>
+                Tus emociones importan.
+                No tienes que estar bien todos los días.
+                Mereces escucharte y recibir apoyo.
+            </p>
+
+            <nav class="enlaces-legales" aria-label="Información legal">
+                <a href="{{ url_for('terminos') }}">Términos y Condiciones</a>
+                <a href="{{ url_for('privacidad') }}">Aviso de Privacidad</a>
+                <a href="{{ url_for('cookies') }}">Política de Cookies</a>
+                <button type="button" class="enlace-boton abrir-config-cookies">Configurar cookies</button>
+            </nav>
+
+            <small>
+                Mente en Equilibrio · Un espacio de bienestar emocional.
+                No sustituye la atención psicológica profesional.
+            </small>
+        </footer>
+    </main>
+
+    <!-- ===== Ventana de Términos y Condiciones ===== -->
+    <div id="modalTerminos" class="modal-fondo" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloTerminos">
+            <div class="modal-emoji">🤝</div>
+            <h2 id="tituloTerminos">Antes de comenzar</h2>
+            <p class="modal-texto">
+                Queremos que este sea un espacio seguro para ti.
+                Lee y marca <strong>cada casilla</strong> para continuar.
+            </p>
+
+            <form id="formTerminos" novalidate>
+                <label class="casilla">
+                    <input type="checkbox" name="terminos">
+                    <span>
+                        He leído y acepto los
+                        <a href="{{ url_for('terminos') }}" target="_blank" rel="noopener">Términos y Condiciones</a>.
+                    </span>
+                </label>
+
+                <label class="casilla">
+                    <input type="checkbox" name="privacidad">
+                    <span>
+                        He leído y acepto el
+                        <a href="{{ url_for('privacidad') }}" target="_blank" rel="noopener">Aviso de Privacidad</a>.
+                    </span>
+                </label>
+
+                <label class="casilla">
+                    <input type="checkbox" name="profesional">
+                    <span>
+                        Entiendo que este sitio <strong>no sustituye</strong> la atención
+                        psicológica, médica o de emergencia.
+                    </span>
+                </label>
+
+                <label class="casilla">
+                    <input type="checkbox" name="edad">
+                    <span>
+                        Tengo 18 años o más, o cuento con el permiso de mi madre, padre o tutor.
+                    </span>
+                </label>
+
+                <p class="progreso-casillas" id="progresoTerminos" aria-live="polite">0 de 4 casillas marcadas</p>
+
+                <button type="submit" class="boton boton-ancho" id="aceptarTerminos" disabled>
+                    Aceptar y continuar 💜
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== Aviso de cookies ===== -->
+    <div id="bannerCookies" class="banner-cookies" role="region" aria-label="Aviso de cookies" hidden>
+        <p>
+            🍪 Usamos cookies <strong>necesarias</strong> para que el sitio funcione.
+            Con tu permiso, también usamos cookies de <strong>preferencias</strong> y <strong>análisis</strong>.
+            <a href="{{ url_for('cookies') }}">Más información</a>
+        </p>
+        <div class="banner-botones">
+            <button type="button" class="boton-secundario" id="cookiesRechazar">Solo necesarias</button>
+            <button type="button" class="boton-secundario abrir-config-cookies">Configurar</button>
+            <button type="button" class="boton" id="cookiesAceptar">Aceptar todas</button>
+        </div>
+    </div>
+
+    <!-- ===== Configuración de cookies ===== -->
+    <div id="modalCookies" class="modal-fondo" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloCookies">
+            <h2 id="tituloCookies">Configurar cookies 🍪</h2>
+            <p class="modal-texto">Elige qué cookies permites. Puedes cambiarlo cuando quieras desde el pie de página.</p>
+
+            <form id="formCookies">
+                <div class="opcion-cookie">
+                    <div>
+                        <strong>Necesarias</strong>
+                        <p>Guardan que aceptaste los términos y tus elecciones de cookies. Sin ellas el sitio no funciona.</p>
+                    </div>
+                    <label class="interruptor">
+                        <input type="checkbox" checked disabled>
+                        <span class="deslizador" aria-hidden="true"></span>
+                        <span class="sr-only">Cookies necesarias (siempre activas)</span>
+                    </label>
+                </div>
+
+                <div class="opcion-cookie">
+                    <div>
+                        <strong>Preferencias</strong>
+                        <p>Recuerdan la última emoción que elegiste para darte la bienvenida.</p>
+                    </div>
+                    <label class="interruptor">
+                        <input type="checkbox" name="preferencias">
+                        <span class="deslizador" aria-hidden="true"></span>
+                        <span class="sr-only">Permitir cookies de preferencias</span>
+                    </label>
+                </div>
+
+                <div class="opcion-cookie">
+                    <div>
+                        <strong>Análisis</strong>
+                        <p>Nos ayudarían a saber, de forma anónima, cuántas personas visitan el sitio para mejorarlo.</p>
+                    </div>
+                    <label class="interruptor">
+                        <input type="checkbox" name="analiticas">
+                        <span class="deslizador" aria-hidden="true"></span>
+                        <span class="sr-only">Permitir cookies de análisis</span>
+                    </label>
+                </div>
+
+                <div class="modal-botones">
+                    <button type="button" class="boton-secundario" id="cerrarCookies">Cancelar</button>
+                    <button type="submit" class="boton">Guardar preferencias</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='legal.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block titulo %}Política de Cookies · Mente en Equilibrio{% endblock %}
+{% block pagina_legal %}si{% endblock %}
+
+{% block contenido %}
+<article class="legal">
+    <p class="etiqueta">INFORMACIÓN LEGAL</p>
+    <h1>Política de Cookies</h1>
+    <p class="fecha-legal">Última actualización: {{ fecha_legal }}</p>
+
+    <h2>¿Qué son las cookies?</h2>
+    <p>
+        Son pequeños archivos de texto que un sitio web guarda en tu navegador para recordar
+        información entre visitas.
+    </p>
+
+    <h2>Cookies que usamos</h2>
+    <div class="tabla-contenedor">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Para qué sirve</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>mee_terminos</code></td>
+                    <td>Necesaria</td>
+                    <td>Recuerda que aceptaste los Términos y Condiciones y qué versión aceptaste.</td>
+                    <td>1 año</td>
+                </tr>
+                <tr>
+                    <td><code>mee_cookies</code></td>
+                    <td>Necesaria</td>
+                    <td>Guarda qué tipos de cookies permitiste.</td>
+                    <td>6 meses</td>
+                </tr>
+                <tr>
+                    <td><code>mee_ultima_emocion</code></td>
+                    <td>Preferencias</td>
+                    <td>Recuerda la última emoción que elegiste para darte la bienvenida.</td>
+                    <td>30 días</td>
+                </tr>
+                <tr>
+                    <td>—</td>
+                    <td>Análisis</td>
+                    <td>Por ahora no usamos ninguna herramienta de análisis. Si la agregamos, solo se activará con tu permiso y la listaremos aquí.</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Cómo cambiar tu elección</h2>
+    <p>
+        Puedes cambiar los permisos en cualquier momento. Si desactivas una categoría, borraremos sus
+        cookies. También puedes borrar todas las cookies desde la configuración de tu navegador.
+    </p>
+    <button type="button" class="boton-secundario abrir-config-cookies">Configurar cookies</button>
+
+    <h2>Más información</h2>
+    <p>
+        Consulta el <a href="{{ url_for('privacidad') }}">Aviso de Privacidad</a> o escríbenos a
+        <a href="mailto:{{ correo_contacto }}">{{ correo_contacto }}</a>.
+    </p>
+
+    <a href="{{ url_for('inicio') }}" class="boton">Volver al inicio</a>
+</article>
+{% endblock %}

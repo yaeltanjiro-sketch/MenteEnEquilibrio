@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block titulo %}Términos y Condiciones · Mente en Equilibrio{% endblock %}
+{% block pagina_legal %}si{% endblock %}
+
+{% block contenido %}
+<article class="legal">
+    <p class="etiqueta">INFORMACIÓN LEGAL</p>
+    <h1>Términos y Condiciones</h1>
+    <p class="fecha-legal">Última actualización: {{ fecha_legal }}</p>
+
+    <h2>1. Aceptación</h2>
+    <p>
+        Al usar {{ nombre_sitio }} aceptas estos Términos y Condiciones. Si no estás de acuerdo con
+        alguno de ellos, te pedimos que no uses el sitio.
+    </p>
+
+    <h2>2. Qué es {{ nombre_sitio }}</h2>
+    <p>
+        Es un espacio digital de bienestar emocional que ofrece mensajes de apoyo, consejos generales
+        y ejercicios de respiración. Su contenido es <strong>informativo y de acompañamiento</strong>.
+    </p>
+
+    <h2>3. No sustituye la atención profesional</h2>
+    <p>
+        {{ nombre_sitio }} <strong>no ofrece diagnóstico, tratamiento ni terapia</strong>, y no sustituye
+        la atención de un psicólogo, psiquiatra, médico u otro profesional de la salud.
+    </p>
+    <p>
+        Si estás en peligro o piensas en hacerte daño, comunícate de inmediato con los servicios de
+        emergencia de tu país (por ejemplo, 911 o 112) o con una línea de atención en crisis.
+    </p>
+
+    <h2>4. Edad mínima</h2>
+    <p>
+        El sitio está dirigido a personas de 18 años o más. Las personas menores de edad pueden usarlo
+        con el permiso y acompañamiento de su madre, padre o tutor.
+    </p>
+
+    <h2>5. Uso adecuado</h2>
+    <p>Te comprometes a:</p>
+    <ul>
+        <li>Usar el sitio con fines personales y legales.</li>
+        <li>No intentar dañar, sobrecargar o acceder sin autorización al sitio o a sus servidores.</li>
+        <li>No copiar ni redistribuir el contenido con fines comerciales sin permiso.</li>
+    </ul>
+
+    <h2>6. Propiedad intelectual</h2>
+    <p>
+        Los textos, el diseño y los elementos visuales de {{ nombre_sitio }} pertenecen a sus autores.
+        Puedes compartir los mensajes para uso personal, mencionando la fuente.
+    </p>
+
+    <h2>7. Limitación de responsabilidad</h2>
+    <p>
+        Hacemos nuestro mejor esfuerzo para que el contenido sea útil y respetuoso, pero no garantizamos
+        que sea adecuado para cada situación. Las decisiones que tomes a partir del contenido son tu
+        responsabilidad. No nos hacemos responsables por interrupciones del servicio o errores técnicos.
+    </p>
+
+    <h2>8. Privacidad y cookies</h2>
+    <p>
+        El tratamiento de tus datos se explica en el
+        <a href="{{ url_for('privacidad') }}">Aviso de Privacidad</a> y el uso de cookies en la
+        <a href="{{ url_for('cookies') }}">Política de Cookies</a>.
+    </p>
+
+    <h2>9. Cambios a estos términos</h2>
+    <p>
+        Podemos actualizar estos términos. Cuando haya cambios importantes, te pediremos aceptarlos de
+        nuevo al entrar al sitio.
+    </p>
+
+    <h2>10. Contacto</h2>
+    <p>
+        Si tienes dudas, escríbenos a
+        <a href="mailto:{{ correo_contacto }}">{{ correo_contacto }}</a>.
+    </p>
+
+    <a href="{{ url_for('inicio') }}" class="boton">Volver al inicio</a>
+</article>
+{% endblock %}

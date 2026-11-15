@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block titulo %}Aviso de Privacidad · Mente en Equilibrio{% endblock %}
+{% block pagina_legal %}si{% endblock %}
+
+{% block contenido %}
+<article class="legal">
+    <p class="etiqueta">INFORMACIÓN LEGAL</p>
+    <h1>Aviso de Privacidad</h1>
+    <p class="fecha-legal">Última actualización: {{ fecha_legal }}</p>
+
+    <h2>1. Responsable</h2>
+    <p>
+        El responsable del tratamiento de tus datos es {{ nombre_sitio }}. Puedes contactarnos en
+        <a href="mailto:{{ correo_contacto }}">{{ correo_contacto }}</a>.
+    </p>
+
+    <h2>2. Qué datos tratamos</h2>
+    <ul>
+        <li>
+            <strong>Emociones que eliges:</strong> se procesan solo en tu navegador para mostrarte un
+            mensaje. <strong>No se envían ni se guardan en nuestros servidores.</strong>
+        </li>
+        <li>
+            <strong>Cookies:</strong> pequeños archivos guardados en tu dispositivo, descritos en la
+            <a href="{{ url_for('cookies') }}">Política de Cookies</a>.
+        </li>
+        <li>
+            <strong>Datos técnicos:</strong> como cualquier sitio web, el servidor donde está alojado puede
+            registrar de forma automática tu dirección IP, tipo de navegador y fecha de acceso, por motivos
+            de seguridad y funcionamiento.
+        </li>
+    </ul>
+    <p>No te pedimos nombre, correo, teléfono ni ningún dato que te identifique directamente.</p>
+
+    <h2>3. Para qué los usamos</h2>
+    <ul>
+        <li>Hacer que el sitio funcione y recordar que aceptaste los términos.</li>
+        <li>Recordar tus preferencias, solo si lo permites.</li>
+        <li>Conocer de forma anónima el uso del sitio para mejorarlo, solo si lo permites.</li>
+    </ul>
+
+    <h2>4. Con quién los compartimos</h2>
+    <p>
+        No vendemos ni compartimos tus datos con terceros, salvo con el proveedor de alojamiento del sitio
+        para que funcione, o cuando una autoridad lo requiera conforme a la ley.
+    </p>
+
+    <h2>5. Tus derechos</h2>
+    <p>
+        Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos
+        (derechos ARCO), así como a retirar tu consentimiento. Para ejercerlos, escríbenos a
+        <a href="mailto:{{ correo_contacto }}">{{ correo_contacto }}</a>.
+    </p>
+    <p>
+        Puedes borrar todas las cookies desde la configuración de tu navegador, o cambiar tus elecciones
+        en cualquier momento:
+    </p>
+    <button type="button" class="boton-secundario abrir-config-cookies">Configurar cookies</button>
+
+    <h2>6. Cambios a este aviso</h2>
+    <p>Si actualizamos este aviso, publicaremos la nueva versión en esta página con su fecha.</p>
+
+    <a href="{{ url_for('inicio') }}" class="boton">Volver al inicio</a>
+</article>
+{% endblock %}

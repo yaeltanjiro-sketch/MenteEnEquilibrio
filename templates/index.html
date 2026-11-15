@@ -1,124 +1,98 @@
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#8064e9">
-    <title>Mente en Equilibrio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block contenido %}
+<section class="hero">
+    <div class="decoracion" aria-hidden="true">✨ 🌈 ☁️</div>
 
-<body>
+    <p class="etiqueta">UN MOMENTO PARA TI</p>
 
-    <header>
-        <div class="logo">🧠 Mente en Equilibrio</div>
-        <span class="tag">Tu espacio seguro 💜</span>
-    </header>
+    <h1>¡Hola! 👋<br>
+        ¿Cómo está tu corazón hoy?
+    </h1>
 
-    <main>
-        <section class="hero">
-            <div class="decoracion">✨ 🌈 ☁️</div>
+    <p class="subtitulo">
+        No importa cómo te sientas.
+        Aquí tienes un espacio para expresarte
+        sin miedo a ser juzgado.
+    </p>
 
-            <p class="etiqueta">UN MOMENTO PARA TI</p>
+    <p id="bienvenidaDeVuelta" class="bienvenida" hidden></p>
 
-            <h1>¡Hola! 👋<br>
-                ¿Cómo está tu corazón hoy?
-            </h1>
+    <a href="#emociones" class="boton">Comenzar 💜</a>
+</section>
 
-            <p class="subtitulo">
-                No importa cómo te sientas.
-                Aquí tienes un espacio para expresarte
-                sin miedo a ser juzgado.
-            </p>
+<section id="emociones" class="emociones">
+    <p class="etiqueta">CONOCE TUS EMOCIONES</p>
 
-            <a href="#emociones" class="boton">
-                Comenzar 💜
-            </a>
-        </section>
+    <h2>¿Cómo te sientes hoy?</h2>
 
-        <section id="emociones" class="emociones">
-            <p class="etiqueta">CONOCE TUS EMOCIONES</p>
+    <p class="subtitulo">Selecciona la emoción que mejor te representa.</p>
 
-            <h2>¿Cómo te sientes hoy?</h2>
+    <div class="grid-emociones">
+        <button type="button" class="mood feliz" data-mood="feliz"><span aria-hidden="true">😊</span>Feliz</button>
+        <button type="button" class="mood triste" data-mood="triste"><span aria-hidden="true">😔</span>Triste</button>
+        <button type="button" class="mood estresado" data-mood="estresado"><span aria-hidden="true">😰</span>Estresado</button>
+        <button type="button" class="mood enojado" data-mood="enojado"><span aria-hidden="true">😡</span>Enojado</button>
+        <button type="button" class="mood cansado" data-mood="cansado"><span aria-hidden="true">😴</span>Cansado</button>
+        <button type="button" class="mood solo" data-mood="solo"><span aria-hidden="true">🥺</span>Solo</button>
+    </div>
+</section>
 
-            <p class="subtitulo">
-                Selecciona la emoción que mejor te representa.
-            </p>
+<section id="resultado" class="resultado oculto" aria-live="polite">
+    <div id="emojiResultado" aria-hidden="true">💜</div>
 
-            <div class="grid-emociones">
+    <p class="etiqueta">UN MENSAJE PARA TI</p>
 
-                <button class="mood feliz" data-mood="feliz">
-                    <span>😊</span>
-                    Feliz
-                </button>
+    <h2 id="tituloResultado"></h2>
 
-                <button class="mood triste" data-mood="triste">
-                    <span>😔</span>
-                    Triste
-                </button>
+    <p id="mensajeResultado"></p>
 
-                <button class="mood estresado" data-mood="estresado">
-                    <span>😰</span>
-                    Estresado
-                </button>
+    <div class="consejo">
+        <strong>🌱 Un pequeño consejo:</strong>
+        <p id="consejoResultado"></p>
+    </div>
 
-                <button class="mood enojado" data-mood="enojado">
-                    <span>😡</span>
-                    Enojado
-                </button>
+    <button type="button" id="otroMensaje" class="boton">Otro mensaje ✨</button>
+    <a href="#respira" id="irRespirar" class="boton boton-suave">Respirar conmigo 🌬️</a>
+    <button type="button" id="volver" class="boton-secundario">Elegir otra emoción</button>
+</section>
 
-                <button class="mood cansado" data-mood="cansado">
-                    <span>😴</span>
-                    Cansado
-                </button>
+<section id="respira" class="respira">
+    <p class="etiqueta">UNA PAUSA DE UN MINUTO</p>
+    <h2>Respira conmigo</h2>
+    <p class="subtitulo">
+        Sigue el círculo: inhala mientras crece, sostén el aire y exhala mientras se hace pequeño.
+    </p>
 
-                <button class="mood solo" data-mood="solo">
-                    <span>🥺</span>
-                    Solo
-                </button>
+    <div class="circulo-contenedor">
+        <div id="circuloRespira" class="circulo-respira">
+            <span id="textoRespira">Listo</span>
+        </div>
+    </div>
 
-            </div>
-        </section>
+    <p id="contadorRespira" class="contador-respira" aria-live="polite"></p>
 
-        <section id="resultado" class="resultado oculto">
-            <div id="emojiResultado">💜</div>
+    <button type="button" id="botonRespira" class="boton">Empezar 🌬️</button>
+</section>
 
-            <p class="etiqueta">UN MENSAJE PARA TI</p>
+<section id="ayuda" class="ayuda">
+    <div class="ayuda-icono" aria-hidden="true">🆘</div>
+    <div>
+        <h2>¿Necesitas ayuda ahora?</h2>
+        <p>
+            Si estás en peligro o piensas en hacerte daño, no estás solo.
+            Busca ayuda de inmediato:
+        </p>
+        <ul>
+            <li><strong>Emergencias:</strong> llama al <a href="tel:911">911</a> (México y gran parte de Latinoamérica) o al <a href="tel:112">112</a> (España y Europa).</li>
+            <li><strong>México · Línea de la Vida:</strong> <a href="tel:8009112000">800 911 2000</a>, gratuita, las 24 horas.</li>
+            <li><strong>España · Línea 024:</strong> <a href="tel:024">024</a>, atención a la conducta suicida, las 24 horas.</li>
+            <li>Habla con alguien de confianza: un familiar, amigo, maestro o profesional de la salud.</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
 
-            <h2 id="tituloResultado"></h2>
-
-            <p id="mensajeResultado"></p>
-
-            <div class="consejo">
-                <strong>🌱 Un pequeño consejo:</strong>
-                <p id="consejoResultado"></p>
-            </div>
-
-            <button id="otroMensaje" class="boton">
-                Otro mensaje ✨
-            </button>
-
-            <button id="volver" class="boton-secundario">
-                Elegir otra emoción
-            </button>
-        </section>
-
-        <footer>
-            <h3>Recuerda algo importante 💜</h3>
-            <p>
-                Tus emociones importan.
-                No tienes que estar bien todos los días.
-                Mereces escucharte y recibir apoyo.
-            </p>
-            <small>
-                Mente en Equilibrio · Un espacio de bienestar emocional.
-                No sustituye la atención psicológica profesional.
-            </small>
-        </footer>
-
-    </main>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>
+{% block scripts %}
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
