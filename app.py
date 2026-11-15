@@ -5,7 +5,7 @@ app = Flask(__name__)
 # Cambia estos datos por los reales antes de publicar el sitio.
 DATOS_SITIO = {
     "nombre_sitio": "Mente en Equilibrio",
-    "correo_contacto": "contacto@tudominio.com",
+    "correo_contacto": "km6016836@gmail.com",
     "fecha_legal": "14 de noviembre de 2026",
 }
 
