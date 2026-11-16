@@ -18,6 +18,7 @@
         <a href="#cabeza" class="sintoma"><span aria-hidden="true">🤕</span>Dolor de cabeza</a>
         <a href="#hinchazon" class="sintoma"><span aria-hidden="true">🎈</span>Hinchazón</a>
         <a href="#antojos" class="sintoma"><span aria-hidden="true">🍫</span>Antojos</a>
+        <a href="#pareja" class="sintoma"><span aria-hidden="true">💗</span>Con mi novio</a>
     </nav>
 </section>
 
@@ -96,6 +97,57 @@
     </article>
 </section>
 
+<section id="pareja" class="pareja-ciclo">
+    <div class="pareja-encabezado">
+        <p class="etiqueta">Con tu pareja</p>
+        <h2>Que tu novio también <em>lo entienda</em></h2>
+        <p class="subtitulo">
+            La menstruación no es un secreto ni algo de qué avergonzarse.
+            Cuando los dos hablan del tema, es más fácil cuidarse.
+        </p>
+    </div>
+
+    <div class="pareja-columnas">
+        <article class="pareja-tarjeta">
+            <div class="tip-icono" aria-hidden="true">💬</div>
+            <h3>Para ti: cómo decírselo</h3>
+            <ul>
+                <li><strong>Díselo con confianza:</strong> "Estoy en mis días y me siento mal" es suficiente. No tienes que dar más explicaciones.</li>
+                <li><strong>Pide lo que necesitas:</strong> él no adivina. Dile si quieres un abrazo, compañía, espacio o que te traiga algo.</li>
+                <li><strong>Explícale cómo te afecta:</strong> si estás más sensible o cansada, contarle evita malentendidos.</li>
+                <li><strong>No tienes que fingir</strong> que estás bien para no "molestar". Sentirte mal no es una carga.</li>
+            </ul>
+
+            <div class="mensaje-copiar">
+                <p class="mensaje-titulo">¿No sabes cómo empezar? Mándale esto:</p>
+                <p id="mensajePareja" class="mensaje-texto">
+                    Oye, estoy en mis días y me siento un poco mal 😣. No es nada contigo,
+                    solo ando más cansada y sensible. ¿Me apapachas un ratito? 💗
+                </p>
+                <button type="button" id="copiarMensaje" class="boton boton-suave">Copiar mensaje</button>
+            </div>
+        </article>
+
+        <article class="pareja-tarjeta">
+            <div class="tip-icono" aria-hidden="true">🫂</div>
+            <h3>Para él: cómo apoyarla</h3>
+            <ul>
+                <li><strong>Apapáchala:</strong> un abrazo, estar con ella o ver una peli juntos ayuda más de lo que crees.</li>
+                <li><strong>Pregunta, no supongas:</strong> "¿Cómo te sientes? ¿Necesitas algo?" Y escucha la respuesta.</li>
+                <li><strong>Pequeños detalles:</strong> llévale un té, su snack favorito, una bolsa de agua caliente o un chocolate.</li>
+                <li><strong>Ten paciencia:</strong> si está más sensible o callada, no lo tomes personal. Son las hormonas y el dolor, no tú.</li>
+                <li><strong>Sin bromas ni asco:</strong> nunca te burles ni digas "seguro estás en tus días" para invalidar lo que siente. Es algo natural.</li>
+                <li><strong>Respeta su espacio</strong> si prefiere estar sola, y hazle saber que estás ahí cuando te necesite.</li>
+            </ul>
+        </article>
+    </div>
+
+    <p class="pareja-nota">
+        💚 Una buena pareja te cuida también en tus días. Si alguien te hace sentir mal o te avergüenza
+        por tu menstruación, eso <strong>no está bien</strong>. Mereces respeto siempre.
+    </p>
+</section>
+
 <section class="kit-ciclo">
     <div>
         <p class="etiqueta">Para la escuela o al salir</p>
@@ -141,4 +193,19 @@
     <a href="{{ url_for('inicio') }}#respira" class="boton">Respirar un minuto</a>
     <a href="{{ url_for('inicio') }}#emociones" class="boton boton-suave">¿Cómo te sientes hoy?</a>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById("copiarMensaje").addEventListener("click", async function () {
+        const texto = document.getElementById("mensajePareja").textContent.replace(/\s+/g, " ").trim();
+        try {
+            await navigator.clipboard.writeText(texto);
+            this.textContent = "¡Copiado! ✓";
+        } catch (e) {
+            this.textContent = "No se pudo copiar";
+        }
+        setTimeout(() => { this.textContent = "Copiar mensaje"; }, 2000);
+    });
+</script>
 {% endblock %}

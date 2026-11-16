@@ -1436,3 +1436,119 @@ section[id] {
         padding: 24px 20px;
     }
 }
+
+/* Con tu pareja */
+
+.pareja-ciclo {
+    padding: 8px 0 56px;
+    scroll-margin-top: 90px;
+}
+
+.pareja-encabezado {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.pareja-encabezado .etiqueta {
+    color: var(--rosa);
+}
+
+.pareja-encabezado h2 em {
+    color: var(--rosa);
+}
+
+.pareja-columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.pareja-tarjeta {
+    display: flex;
+    flex-direction: column;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 30px 28px;
+    line-height: 1.65;
+}
+
+.pareja-tarjeta h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.pareja-tarjeta ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.pareja-tarjeta li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--texto-suave);
+}
+
+.pareja-tarjeta li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: .62em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rosa);
+}
+
+.pareja-tarjeta li strong {
+    color: var(--texto);
+}
+
+.mensaje-copiar {
+    margin-top: auto;
+    padding-top: 22px;
+}
+
+.mensaje-titulo {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--texto-suave);
+    margin-bottom: 8px;
+}
+
+.mensaje-texto {
+    background: var(--rosa-pastel);
+    border-radius: 18px 18px 18px 4px;
+    padding: 14px 18px;
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.mensaje-copiar .boton {
+    margin: 12px 0 0;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.pareja-nota {
+    margin-top: 18px;
+    text-align: center;
+    color: var(--texto-suave);
+    line-height: 1.7;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .pareja-columnas {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .pareja-tarjeta {
+        padding: 24px 20px;
+    }
+}
