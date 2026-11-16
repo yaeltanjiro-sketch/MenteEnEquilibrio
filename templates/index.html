@@ -2,27 +2,41 @@
 
 {% block contenido %}
 <section class="hero">
-    <div class="decoracion" aria-hidden="true">✨ 🌈 ☁️</div>
+    <div class="hero-texto">
+        <p class="etiqueta">Un momento para ti</p>
 
-    <p class="etiqueta">UN MOMENTO PARA TI</p>
+        <h1>¡Hola! ¿Cómo está tu <em>corazón</em> hoy?</h1>
 
-    <h1>¡Hola! 👋<br>
-        ¿Cómo está tu corazón hoy?
-    </h1>
+        <p class="subtitulo">
+            No importa cómo te sientas.
+            Aquí tienes un espacio para expresarte
+            sin miedo a ser juzgado.
+        </p>
 
-    <p class="subtitulo">
-        No importa cómo te sientas.
-        Aquí tienes un espacio para expresarte
-        sin miedo a ser juzgado.
-    </p>
+        <p id="bienvenidaDeVuelta" class="bienvenida" hidden></p>
 
-    <p id="bienvenidaDeVuelta" class="bienvenida" hidden></p>
+        <div class="hero-acciones">
+            <a href="#emociones" class="boton">Comenzar</a>
+            <a href="#respira" class="boton boton-suave">Respirar un minuto</a>
+        </div>
+    </div>
 
-    <a href="#emociones" class="boton">Comenzar 💜</a>
+    <div class="hero-arte" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+            <path class="forma-1" d="M318 92c42 40 58 108 36 164s-82 98-146 104S82 336 54 278 30 150 72 104 160 30 216 36s60 16 102 56z"/>
+            <path class="forma-2" d="M282 150c30 30 34 84 10 120s-74 52-114 42-72-44-74-86 24-80 62-96 86-10 116 20z"/>
+            <circle class="sol" cx="268" cy="118" r="34"/>
+            <g class="hojas">
+                <path d="M170 300c-4-52 18-96 62-120c4 50-20 94-62 120z"/>
+                <path d="M168 300c-30-34-38-74-22-112c30 30 36 72 22 112z"/>
+                <path class="tallo" d="M170 300c0-40 20-80 58-114M168 300c-6-34-12-70-20-104"/>
+            </g>
+        </svg>
+    </div>
 </section>
 
 <section id="emociones" class="emociones">
-    <p class="etiqueta">CONOCE TUS EMOCIONES</p>
+    <p class="etiqueta">Conoce tus emociones</p>
 
     <h2>¿Cómo te sientes hoy?</h2>
 
@@ -48,26 +62,26 @@
 </section>
 
 <section id="resultado" class="resultado oculto" aria-live="polite">
-    <div id="emojiResultado" aria-hidden="true">💜</div>
+    <div id="emojiResultado" aria-hidden="true">🌿</div>
 
-    <p class="etiqueta">UN MENSAJE PARA TI</p>
+    <p class="etiqueta">Un mensaje para ti</p>
 
     <h2 id="tituloResultado"></h2>
 
     <p id="mensajeResultado"></p>
 
     <div class="consejo">
-        <strong>🌱 Un pequeño consejo:</strong>
+        <strong>Un pequeño consejo</strong>
         <p id="consejoResultado"></p>
     </div>
 
-    <button type="button" id="otroMensaje" class="boton">Otro mensaje ✨</button>
-    <a href="#respira" id="irRespirar" class="boton boton-suave">Respirar conmigo 🌬️</a>
+    <button type="button" id="otroMensaje" class="boton">Otro mensaje</button>
+    <a href="#respira" id="irRespirar" class="boton boton-suave">Respirar conmigo</a>
     <button type="button" id="volver" class="boton-secundario">Elegir otra emoción</button>
 </section>
 
 <section id="respira" class="respira">
-    <p class="etiqueta">UNA PAUSA DE UN MINUTO</p>
+    <p class="etiqueta">Una pausa de un minuto</p>
     <h2>Respira conmigo</h2>
     <p class="subtitulo">
         Sigue el círculo: inhala mientras crece, sostén el aire y exhala mientras se hace pequeño.
@@ -81,11 +95,11 @@
 
     <p id="contadorRespira" class="contador-respira" aria-live="polite"></p>
 
-    <button type="button" id="botonRespira" class="boton">Empezar 🌬️</button>
+    <button type="button" id="botonRespira" class="boton">Empezar</button>
 </section>
 
 <section id="ayuda" class="ayuda">
-    <div class="ayuda-icono" aria-hidden="true">🆘</div>
+    <div class="ayuda-icono" aria-hidden="true">!</div>
     <div>
         <h2>¿Necesitas ayuda ahora?</h2>
         <p>

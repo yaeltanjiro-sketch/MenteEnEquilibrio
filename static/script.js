@@ -293,7 +293,7 @@ function mostrarBienvenida() {
         : null;
 
     if (ultima && NOMBRES_EMOCION[ultima]) {
-        aviso.textContent = `💜 Qué bueno verte de nuevo. La última vez te sentías ${NOMBRES_EMOCION[ultima]}. ¿Cómo estás hoy?`;
+        aviso.textContent = `Qué bueno verte de nuevo. La última vez te sentías ${NOMBRES_EMOCION[ultima]}. ¿Cómo estás hoy?`;
         aviso.hidden = false;
     } else {
         aviso.hidden = true;
@@ -326,7 +326,7 @@ function detenerRespiracion(mensajeFinal) {
     circulo.className = "circulo-respira";
     textoRespira.textContent = mensajeFinal || "Listo";
     contadorRespira.textContent = "";
-    botonRespira.textContent = "Empezar 🌬️";
+    botonRespira.textContent = "Empezar";
 }
 
 function ejecutarFase(ciclo, indiceFase) {
@@ -334,7 +334,7 @@ function ejecutarFase(ciclo, indiceFase) {
 
     if (indiceFase >= FASES_RESPIRACION.length) {
         if (ciclo >= CICLOS_TOTALES) {
-            detenerRespiracion("Muy bien 💜");
+            detenerRespiracion("Muy bien");
             contadorRespira.textContent = "Lo hiciste. Nota cómo se siente tu cuerpo ahora.";
             return;
         }
