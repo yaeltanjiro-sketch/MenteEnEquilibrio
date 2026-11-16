@@ -1131,52 +1131,24 @@ section[id] {
     --rosa-borde: #ecd0cd;
 }
 
-/* Tarjeta de aviso en el inicio */
+/* Aviso discreto en el inicio */
 
 .aviso-ciclo {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    background: var(--rosa-pastel);
-    border: 1px solid var(--rosa-borde);
-    border-radius: var(--radio);
-    padding: 28px 32px;
-    margin-bottom: 40px;
+    text-align: center;
+    color: var(--texto-tenue);
+    font-size: 15px;
+    margin: -8px 0 48px;
 }
 
-.aviso-ciclo-icono {
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: var(--superficie);
-    font-size: 32px;
+.aviso-ciclo a {
+    color: var(--rosa);
+    text-decoration: underline;
+    text-decoration-color: var(--rosa-borde);
+    text-underline-offset: 3px;
 }
 
-.aviso-ciclo-texto {
-    flex: 1;
-}
-
-.aviso-ciclo h2 {
-    font-size: clamp(22px, 2.6vw, 28px);
-    margin-bottom: 6px;
-}
-
-.aviso-ciclo p {
-    color: var(--texto-suave);
-    line-height: 1.6;
-}
-
-.aviso-ciclo .boton {
-    flex-shrink: 0;
-    background: var(--rosa);
-}
-
-.aviso-ciclo .boton:hover {
-    background: #8e4351;
-    box-shadow: 0 8px 20px -8px #8e435180;
+.aviso-ciclo a:hover {
+    text-decoration-color: var(--rosa);
 }
 
 /* Página */
@@ -1401,12 +1373,6 @@ section[id] {
 }
 
 @media (max-width: 600px) {
-    .aviso-ciclo {
-        flex-direction: column;
-        text-align: center;
-        gap: 14px;
-        padding: 26px 20px;
-    }
 
     .ciclo-hero {
         padding: 36px 0 28px;
