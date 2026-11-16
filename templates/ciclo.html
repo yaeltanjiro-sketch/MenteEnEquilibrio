@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block titulo %}Mi ciclo · Mente en Equilibrio{% endblock %}
+
+{% block contenido %}
+<section class="ciclo-hero">
+    <p class="etiqueta">Mi ciclo</p>
+    <h1>Estás en tus días. <em>Cuídate</em> con cariño.</h1>
+    <p class="subtitulo">
+        Sentirte mal durante la menstruación es muy común, y no es exagerar.
+        Elige lo que sientes y te damos ideas para sentirte un poco mejor.
+    </p>
+
+    <nav class="sintomas" aria-label="¿Qué sientes?">
+        <a href="#colicos" class="sintoma"><span aria-hidden="true">🔥</span>Cólicos</a>
+        <a href="#cansancio" class="sintoma"><span aria-hidden="true">😴</span>Cansancio</a>
+        <a href="#animo" class="sintoma"><span aria-hidden="true">🌧️</span>Cambios de humor</a>
+        <a href="#cabeza" class="sintoma"><span aria-hidden="true">🤕</span>Dolor de cabeza</a>
+        <a href="#hinchazon" class="sintoma"><span aria-hidden="true">🎈</span>Hinchazón</a>
+        <a href="#antojos" class="sintoma"><span aria-hidden="true">🍫</span>Antojos</a>
+    </nav>
+</section>
+
+<section class="tips-ciclo">
+    <article id="colicos" class="tip">
+        <div class="tip-icono" aria-hidden="true">🔥</div>
+        <h2>Cólicos</h2>
+        <p class="tip-intro">Son contracciones del útero. Suelen ser más fuertes el primer o segundo día.</p>
+        <ul>
+            <li><strong>Calor:</strong> pon una bolsa de agua caliente o una compresa tibia en el vientre o la espalda baja durante 15–20 minutos.</li>
+            <li><strong>Muévete suave:</strong> caminar un poco o estirarte ayuda a relajar los músculos.</li>
+            <li><strong>Postura que alivia:</strong> acuéstate de lado con las rodillas hacia el pecho, o prueba la postura del niño (de rodillas, con la frente en el suelo).</li>
+            <li><strong>Masaje:</strong> haz círculos suaves con la mano debajo del ombligo.</li>
+            <li><strong>Medicamento:</strong> un analgésico como el ibuprofeno puede ayudar. Pregunta antes a tu mamá, papá, tutor o médico, y respeta la dosis del empaque.</li>
+        </ul>
+    </article>
+
+    <article id="cansancio" class="tip">
+        <div class="tip-icono" aria-hidden="true">😴</div>
+        <h2>Cansancio</h2>
+        <p class="tip-intro">Tu cuerpo está trabajando más de lo normal. Está bien bajar el ritmo.</p>
+        <ul>
+            <li><strong>Duerme bien:</strong> intenta acostarte un poco más temprano. Una siesta corta (20 min) también vale.</li>
+            <li><strong>Come hierro:</strong> frijoles, lentejas, espinaca, huevo o carne. Acompáñalos con fruta como naranja o fresa para aprovecharlo mejor.</li>
+            <li><strong>Toma agua:</strong> la deshidratación aumenta el cansancio.</li>
+            <li><strong>Date permiso:</strong> no tienes que rendir al 100% todos los días.</li>
+        </ul>
+    </article>
+
+    <article id="animo" class="tip">
+        <div class="tip-icono" aria-hidden="true">🌧️</div>
+        <h2>Cambios de humor</h2>
+        <p class="tip-intro">Los cambios de hormonas pueden hacerte sentir más sensible, triste o irritable. No estás mal por sentirte así.</p>
+        <ul>
+            <li><strong>Respira:</strong> una pausa de un minuto puede bajar la tensión. <a href="{{ url_for('inicio') }}#respira">Respira conmigo</a>.</li>
+            <li><strong>Escríbelo:</strong> poner en palabras lo que sientes ayuda a soltarlo.</li>
+            <li><strong>Habla con alguien:</strong> una amiga, tu mamá o alguien de confianza.</li>
+            <li><strong>Haz algo que te guste:</strong> tu música, una serie, dibujar o salir a tomar aire.</li>
+            <li>¿Quieres un mensaje de apoyo? <a href="{{ url_for('inicio') }}#emociones">Elige cómo te sientes</a>.</li>
+        </ul>
+    </article>
+
+    <article id="cabeza" class="tip">
+        <div class="tip-icono" aria-hidden="true">🤕</div>
+        <h2>Dolor de cabeza</h2>
+        <p class="tip-intro">Algunas personas tienen dolor de cabeza antes o durante su periodo.</p>
+        <ul>
+            <li><strong>Hidrátate</strong> y no te saltes comidas.</li>
+            <li><strong>Descansa</strong> en un lugar tranquilo y con poca luz.</li>
+            <li><strong>Pantallas:</strong> toma descansos del celular o la computadora.</li>
+            <li><strong>Frío o calor:</strong> una compresa en la frente o la nuca puede aliviar.</li>
+        </ul>
+    </article>
+
+    <article id="hinchazon" class="tip">
+        <div class="tip-icono" aria-hidden="true">🎈</div>
+        <h2>Hinchazón</h2>
+        <p class="tip-intro">Sentir el vientre inflamado es común por la retención de líquidos.</p>
+        <ul>
+            <li><strong>Más agua</strong>, aunque parezca raro, ayuda a retener menos líquido.</li>
+            <li><strong>Menos sal</strong> y menos refrescos o bebidas con cafeína.</li>
+            <li><strong>Ropa cómoda</strong> que no apriete el abdomen.</li>
+            <li><strong>Caminar</strong> un rato ayuda a la digestión.</li>
+        </ul>
+    </article>
+
+    <article id="antojos" class="tip">
+        <div class="tip-icono" aria-hidden="true">🍫</div>
+        <h2>Antojos</h2>
+        <p class="tip-intro">Tener más hambre o ganas de dulce es normal en estos días.</p>
+        <ul>
+            <li><strong>Date un gusto</strong> sin culpa. Un poco de chocolate amargo es buena opción.</li>
+            <li><strong>Combina</strong> con fruta, nueces o yogur para sentirte con energía más tiempo.</li>
+            <li><strong>Come a tus horas</strong> para evitar bajones de energía.</li>
+        </ul>
+    </article>
+</section>
+
+<section class="kit-ciclo">
+    <div>
+        <p class="etiqueta">Para la escuela o al salir</p>
+        <h2>Tu kit de emergencia</h2>
+        <p class="subtitulo">Llevar una bolsita lista te quita preocupaciones.</p>
+    </div>
+    <ul class="kit-lista">
+        <li><span aria-hidden="true">🩹</span>Toallas, tampones o tu copa</li>
+        <li><span aria-hidden="true">🩲</span>Ropa interior de repuesto</li>
+        <li><span aria-hidden="true">🧻</span>Toallitas húmedas o pañuelos</li>
+        <li><span aria-hidden="true">💧</span>Una botella de agua</li>
+        <li><span aria-hidden="true">🍎</span>Un snack</li>
+        <li><span aria-hidden="true">🧥</span>Un suéter para amarrar a la cintura</li>
+    </ul>
+    <p class="kit-nota">
+        <strong>Recuerda:</strong> cambia la toalla cada 4 a 6 horas, y el tampón como máximo cada 8 horas.
+        Si se mancha la ropa, lávala con agua <strong>fría</strong>: la caliente fija la mancha.
+    </p>
+</section>
+
+<section class="medico-ciclo">
+    <div class="ayuda-icono" aria-hidden="true">!</div>
+    <div>
+        <h2>Cuándo ir con un médico</h2>
+        <p>Algunas molestias no son normales. Habla con un adulto de confianza y acude a consulta si:</p>
+        <ul>
+            <li>El dolor es tan fuerte que no puedes ir a la escuela o no mejora con analgésicos.</li>
+            <li>Empapas una toalla o tampón <strong>cada hora</strong> durante varias horas seguidas.</li>
+            <li>Tu periodo dura <strong>más de 7 días</strong>.</li>
+            <li>Te mareas, te desmayas o te sientes muy débil.</li>
+            <li>Tu periodo deja de llegar 3 meses o más (y no hay posibilidad de embarazo).</li>
+        </ul>
+        <p class="medico-urgente">
+            <strong>Urgente:</strong> si usas tampón y te da fiebre alta, vómito, diarrea o una erupción en la piel,
+            quítatelo y busca atención médica de inmediato.
+        </p>
+    </div>
+</section>
+
+<section class="cierre-ciclo">
+    <h2>Tu cuerpo no es un problema. <em>Escúchalo.</em></h2>
+    <p class="subtitulo">Cada cuerpo es distinto. Lo que sientes es válido.</p>
+    <a href="{{ url_for('inicio') }}#respira" class="boton">Respirar un minuto</a>
+    <a href="{{ url_for('inicio') }}#emociones" class="boton boton-suave">¿Cómo te sientes hoy?</a>
+</section>
+{% endblock %}

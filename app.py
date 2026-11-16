@@ -20,6 +20,11 @@ def inicio():
     return render_template("index.html")
 
 
+@app.route("/ciclo")
+def ciclo():
+    return render_template("ciclo.html")
+
+
 @app.route("/terminos")
 def terminos():
     return render_template("terminos.html")
